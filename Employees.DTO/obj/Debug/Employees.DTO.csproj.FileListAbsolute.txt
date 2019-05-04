@@ -1,0 +1,9 @@
+C:\Users\User\source\repos\Employees\Employees.DTO\bin\Debug\Employees.DTO.dll
+C:\Users\User\source\repos\Employees\Employees.DTO\bin\Debug\Employees.DTO.pdb
+C:\Users\User\source\repos\Employees\Employees.DTO\bin\Debug\Employees.DATA.dll
+C:\Users\User\source\repos\Employees\Employees.DTO\bin\Debug\Employees.DATA.pdb
+C:\Users\User\source\repos\Employees\Employees.DTO\bin\Debug\Employees.DATA.dll.config
+C:\Users\User\source\repos\Employees\Employees.DTO\obj\Debug\Employees.DTO.csprojResolveAssemblyReference.cache
+C:\Users\User\source\repos\Employees\Employees.DTO\obj\Debug\Employees.DTO.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Employees\Employees.DTO\obj\Debug\Employees.DTO.dll
+C:\Users\User\source\repos\Employees\Employees.DTO\obj\Debug\Employees.DTO.pdb

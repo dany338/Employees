@@ -1,0 +1,110 @@
+﻿.priceFinal {
+    color: #d9534f;
+    font-size: 40px;
+    text-align: right;
+}
+
+.priceFinalDetail {
+    color: #d9534f;
+    font-size: 40px;
+    text-align: left;
+}
+/*
+    #myUL {
+        height: 60px;
+        overflow: hidden;
+    }
+
+    #myUL li {
+        list-style: none;
+    }
+        */
+#myUL {
+    counter-reset: li;
+    list-style: none;
+    *list-style: decimal;
+    font: 15px 'trebuchet MS', 'lucida sans';
+    padding: 0;
+    margin-bottom: 4em;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    overflow: hidden;
+    height: 390px;
+}
+
+#myUL ol {
+    margin: 0 0 0 2em;
+}
+
+#myUL li {
+    position: relative;
+    display: block;
+    padding: .4em .4em .4em 1em;
+    *padding: .4em;
+    margin: .5em 0;
+    background: #ddd;
+    color: #444;
+    text-decoration: none;
+    border-radius: .3em;
+    transition: all .3s ease-out;
+}
+
+    #myUL li:hover {
+        background: #eee;
+    }
+
+        #myUL li:hover:before {
+            transform: rotate(360deg);
+        }
+
+    #myUL li:before {
+        /*content: counter(li);*/
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: #87ceeb;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #fff;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2em;
+        transition: all .3s ease-out;
+    }
+
+.select_pricing{
+    width:150px;
+}
+
+.skin-blue .main-header .logo {
+    background-color: #fff !important;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #fff;
+}
+
+.skin-blue .main-header .navbar .sidebar-toggle {
+    color: #000;
+}
+
+.skin-blue .main-header .navbar .nav > li > a {
+    color: #000;
+}
+
+.skin-blue .main-header .navbar .nav > li > a:active {
+    color: #000;
+}
+
+.treeview-menu > li > a {
+    font-size: 12px !important;
+}
+
+.skin-blue .main-header .navbar .nav > li > a:hover, .skin-blue .main-header .navbar .nav > li > a:active, .skin-blue .main-header .navbar .nav > li > a:focus, .skin-blue .main-header .navbar .nav .open > a, .skin-blue .main-header .navbar .nav .open > a:hover, .skin-blue .main-header .navbar .nav .open > a:focus, .skin-blue .main-header .navbar .nav > .active > a {
+    color: #000;
+}
+.test_nuew{
+
+}

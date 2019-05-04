@@ -1,0 +1,6 @@
+C:\Users\User\source\repos\Employees\Employees.DATA\bin\Debug\Employees.DATA.dll.config
+C:\Users\User\source\repos\Employees\Employees.DATA\bin\Debug\Employees.DATA.dll
+C:\Users\User\source\repos\Employees\Employees.DATA\bin\Debug\Employees.DATA.pdb
+C:\Users\User\source\repos\Employees\Employees.DATA\obj\Debug\Employees.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\Employees\Employees.DATA\obj\Debug\Employees.DATA.dll
+C:\Users\User\source\repos\Employees\Employees.DATA\obj\Debug\Employees.DATA.pdb

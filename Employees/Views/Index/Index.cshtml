@@ -1,0 +1,124 @@
+﻿@model Employees.Models.EmployeeModel
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <h1>Employees - innodrive</h1>
+</div>
+
+@using (Html.BeginForm())
+{
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                <div class="box-body">
+                    <div class="form-group">
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <label class="" for="CommissionRenewal">Identificación</label>
+                        @Html.EditorFor(model => model.Document, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Document, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+                <div class="box-footer">
+                    <!-- <button type="submit" class="btn btn-primary">Obtener empleados.</button> -->
+                    <button id="btn-search" type="button" class="btn btn-default">Obtener empleados.</button>
+                </div>
+                @{
+                    if (Model.Employees != null)
+                    {
+                         <!-- /.box-body -->
+                        <div class="box-footer">
+                            <div class="info-box">
+                                <span class="info-box-icon bg-aqua"><i class="fa fa-envelope-o"></i></span>
+
+                                <div class="info-box-content">
+                                    <span class="info-box-text"><span class="badge bg-aqua">Empleados Encontrados</span></span>
+                                    <table id="employees-table" class="table table-bordered table-hover">
+                                        <thead>
+                                            <tr>
+                                                <th># Empleado</th>
+                                                <th>Identificación</th>
+                                                <th>Nombre Completo</th>
+                                                <th>Salario Mensual</th>
+                                                <th>Slario Anual</th>
+                                                <th>Tipo Contrato</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model.Employees)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @item.EmployeeId
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Document)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Name)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.Salary)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.AnnualSalary)
+                                                    </td>
+                                                    <td>
+                                                        @Html.DisplayFor(modelItem => item.ContractType)
+                                                    </td>
+                                                </tr>
+                                            }
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- /.info-box-content -->
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</section>
+}
+<script type="text/javascript">
+
+    $('#btn-search').on('click', function () {
+        var document = $('#Document').val();
+        console.log('document', document);
+        $.ajax({
+            url: "/index/Index",
+            data: { document: document },
+            type: "POST",
+            success: function (result) {
+                console.log('Cantidad Empleados: ', result.employees.length);
+                var html = '';
+                if (result.employees.length == 0) {
+                    html += '<tr><td colspan="6">No hay empleados</td></tr>';
+                } else {
+                    console.log(result);
+                    for (var i = 0; i < result.employees.length; i++) {
+                        var employee = result.employees[i];
+                        console.log(employee.EmployeeId);
+                        html += '<tr>';
+                        html += '<td>' + employee.EmployeeId + '</td>';
+                        html += '<td>' + employee.Document + '</td>';
+                        html += '<td>' + employee.Name + '</td>';
+                        html += '<td>' + employee.Salary + '</td>';
+                        html += '<td>' + employee.AnnualSalary + '</td>';
+                        html += '<td>' + employee.ContractType + '</td>';
+                        html += '</tr>';
+                    }
+                }
+                $('#employees-table > tbody').html(html);
+            },
+            error: function (result) {
+                console.log("Error");
+            }
+        });
+    });
+</script>
